@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="app_icon"
+        android:padding="8dp"
+        android:src="@drawable/ic_test" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create New Wallet"
+            android:textAllCaps="true"
+            android:textColor="@color/purple"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Import Existing Wallet"
+            android:textAllCaps="true"
+            android:textColor="@color/aqua"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FAQ'S"
+            android:textAllCaps="true"
+            android:textColor="@color/pink"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textAllCaps="true"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

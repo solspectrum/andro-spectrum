@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="secondary_light">#5B7282</color>
+    <color name="secondary">#2A3F4D</color>
+    <color name="primary">#1C2B36</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="purple">#6B30AB</color>
+    <color name="aqua">#48B8F0</color>
+    <color name="yellow">#D9A514</color>
+    <color name="pink">#FA87D4</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

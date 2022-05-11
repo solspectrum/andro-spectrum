@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.accounts.AccountsFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:padding="16dp"
+        android:text="Settings"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_stroke_radius"
+        app:strokeColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="64dp"
+        android:paddingVertical="64dp">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/primary"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:layoutDirection="rtl"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:checked="true"
+            android:text="Confidential Transactions" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/primary"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:layoutDirection="rtl"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:checked="false"
+            android:text="TOR" />
+    </LinearLayout>
+</LinearLayout>

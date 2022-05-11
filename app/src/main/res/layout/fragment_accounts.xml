@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.accounts.AccountsFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="32dp"
+        android:padding="16dp"
+        android:text="Accounts"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_stroke_radius"
+        app:strokeColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingVertical="64dp"
+        android:paddingHorizontal="64dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Family 1"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@color/purple"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Family 2"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@color/purple"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/aqua"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Trading ACC"
+            android:textAllCaps="true"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/yellow"
+            android:text="NFT Collection"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:cornerRadius="@dimen/button_stroke_radius"
+            app:strokeColor="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal"
+            app:backgroundTint="@color/pink"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            app:cornerRadius="6dp"
+            app:strokeColor="@color/black" />
+    </LinearLayout>
+</LinearLayout>

@@ -77,6 +77,7 @@ class AccountsFragment : Fragment() {
                 }
             }
         }
+        binding.addNewAccount.setOnClickListener { findNavController().navigate(R.id.navigation_addAccount) }
     }
 
     private fun addButton(colorCode: String, btnName: String) {

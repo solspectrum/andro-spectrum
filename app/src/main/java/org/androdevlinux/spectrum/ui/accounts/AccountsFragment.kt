@@ -1,23 +1,30 @@
 package org.androdevlinux.spectrum.ui.accounts
 
+import android.R.interpolator.linear
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.core.view.marginBottom
+import androidx.core.view.setMargins
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.test.core.app.ApplicationProvider
+import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import dagger.hilt.android.AndroidEntryPoint
 import org.androdevlinux.spectrum.R
 import org.androdevlinux.spectrum.data.PreferenceProvider
 import org.androdevlinux.spectrum.data.model.AddressResponse
 import org.androdevlinux.spectrum.data.network.Resource
 import org.androdevlinux.spectrum.databinding.FragmentAccountsBinding
+import org.androdevlinux.spectrum.ui.AccountUiFragment
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class AccountsFragment : Fragment() {
@@ -66,27 +73,35 @@ class AccountsFragment : Fragment() {
             it.getString("colorCode")?.let { code ->
                 colorCode = code
                 it.getString("name")?.let { name ->
-                    btnName = name
-                    createButtonDynamically(colorCode, btnName)
+                    addButton(colorCode, name)
                 }
             }
-
-
         }
     }
 
-    private fun createButtonDynamically(colorCode: String, btnName: String) {
-        val rowTextView = Button(requireContext())
-        rowTextView.layoutParams = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )  // add the textview to the linearlayout
-        binding.mainLayout.addView(rowTextView, i)
-        rowTextView.text = btnName
-        rowTextView.setBackgroundColor(Color.parseColor(colorCode))
-        rowTextView.setOnClickListener {
-            pref.getSeedPhrase()?.let { viewModel.getAddress(i.toString(), it) }
-        }
-        i.inc()
+    private fun addButton(colorCode: String, btnName: String) {
+
+
+        val param = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT,/* 1.0f*/
+        )
+        param.setMargins(0,10,0,0)
+
+        val btn = arrayOfNulls<Button>( AccountUiFragment.names.size)
+        for (i in 0 until AccountUiFragment.names.size) {
+            btn[i] = Button(requireContext())
+            btn[i]?.text = AccountUiFragment.names[i]
+            btn[i]?.setBackgroundColor(Color.parseColor(colorCode))
+            btn[i]?.textSize = 20f
+//            btn[i]?.height = 100
+            btn[i]?.layoutParams = param
+            btn[i]?.setPadding(15, 5, 15, 5)
+            btn[i]?.marginBottom
+            binding.mainLayout.addView(btn[i])
+            btn[i]?.setOnClickListener {
+                pref.getSeedPhrase()?.let { viewModel.getAddress(i.toString(), it) }
+            }        }
     }
+
+
 }

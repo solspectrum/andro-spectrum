@@ -11,6 +11,9 @@ import org.androdevlinux.spectrum.databinding.FragmentAccountUiBinding
 
 
 class AccountUiFragment : Fragment() {
+    companion object {
+        var names: MutableList<String> = mutableListOf()
+    }
 
     private var _binding: FragmentAccountUiBinding? = null
     private val binding get() = _binding!!
@@ -39,6 +42,7 @@ class AccountUiFragment : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("colorCode", colorCode)
                 bundle.putString("name", binding.accountName.text.toString())
+                names.add(binding.accountName.text.toString())
                 findNavController().navigate(R.id.to_navigation_accounts, bundle)
             }
         }

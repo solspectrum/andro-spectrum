@@ -1,4 +1,4 @@
-package org.androdevlinux.spectrum.ui.paymentCode
+package org.androdevlinux.spectrum.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.journeyapps.barcodescanner.BarcodeEncoder
 import org.androdevlinux.spectrum.databinding.FragmentPaymentCodeBinding
 
 
-class PaymentCodeFragment : Fragment() {
+class AddressFragment : Fragment() {
 
     private var _binding: FragmentPaymentCodeBinding? = null
 
@@ -37,16 +37,27 @@ class PaymentCodeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        try {
-            val barcodeEncoder = BarcodeEncoder()
-            val bitmap = barcodeEncoder.encodeBitmap("asfadsgsfgdfgdfgsdgsdfadfasd", BarcodeFormat.QR_CODE, 400, 400)
-            binding.apply {
-                qrCode.setImageBitmap(bitmap)
-                hashCodeView.text = barcodeEncoder.hashCode().toString()
+        val bundle = this.arguments
+        bundle?.let {
+            it.getString("address")?.let { code ->
+                binding.hashCodeView.text = code
+/*
+                try {
+                    val barcodeEncoder = BarcodeEncoder()
+                    val bitmap = barcodeEncoder.encodeBitmap("asfadsgsfgdfgdfgsdgsdfadfasd", BarcodeFormat.QR_CODE, 400, 400)
+                    binding.apply {
+                        qrCode.setImageBitmap(bitmap)
+                    }
+                    binding.qrCode.setImageBitmap(bitmap)
+                } catch (e: Exception) {
+*/
+//                }
+
             }
-            binding.qrCode.setImageBitmap(bitmap)
-        } catch (e: Exception) {
+
+
         }
+
     }
 
     override fun onDestroyView() {

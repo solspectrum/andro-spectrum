@@ -58,7 +58,7 @@ class AccountsFragment : Fragment() {
             is Resource.Success -> res.value.address?.let {
                 val bundle = Bundle()
                 bundle.putString("address", it)
-                findNavController().navigate(R.id.navigation_payment_code)
+                findNavController().navigate(R.id.navigation_address, bundle)
             }
 
             is Resource.Failure -> println(res.errorBody)
@@ -85,9 +85,9 @@ class AccountsFragment : Fragment() {
         val param = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT,/* 1.0f*/
         )
-        param.setMargins(0,10,0,0)
+        param.setMargins(0, 10, 0, 0)
 
-        val btn = arrayOfNulls<Button>( AccountUiFragment.names.size)
+        val btn = arrayOfNulls<Button>(AccountUiFragment.names.size)
         for (i in 0 until AccountUiFragment.names.size) {
             btn[i] = Button(requireContext())
             btn[i]?.text = AccountUiFragment.names[i]
@@ -100,7 +100,8 @@ class AccountsFragment : Fragment() {
             binding.mainLayout.addView(btn[i])
             btn[i]?.setOnClickListener {
                 pref.getSeedPhrase()?.let { viewModel.getAddress(i.toString(), it) }
-            }        }
+            }
+        }
     }
 
 

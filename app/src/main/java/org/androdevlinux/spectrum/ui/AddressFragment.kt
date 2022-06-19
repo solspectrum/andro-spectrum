@@ -41,23 +41,8 @@ class AddressFragment : Fragment() {
         bundle?.let {
             it.getString("address")?.let { code ->
                 binding.hashCodeView.text = code
-/*
-                try {
-                    val barcodeEncoder = BarcodeEncoder()
-                    val bitmap = barcodeEncoder.encodeBitmap("asfadsgsfgdfgdfgsdgsdfadfasd", BarcodeFormat.QR_CODE, 400, 400)
-                    binding.apply {
-                        qrCode.setImageBitmap(bitmap)
-                    }
-                    binding.qrCode.setImageBitmap(bitmap)
-                } catch (e: Exception) {
-*/
-//                }
-
             }
-
-
         }
-
     }
 
     override fun onDestroyView() {

@@ -28,4 +28,37 @@
         android:name="org.androdevlinux.spectrum.ui.paymentCode.PaymentCodeFragment"
         android:label="@string/title_payment_code"
         tools:layout="@layout/fragment_payment_code" />
+
+    <fragment
+        android:id="@+id/navigation_seed_phrase"
+        android:name="org.androdevlinux.spectrum.ui.SeedPhraseFragment"
+        android:label="Seed Phrase"
+        tools:layout="@layout/fragment_seed_phrase" >
+
+        <action
+            android:id="@+id/to_addAccount"
+            app:destination="@id/navigation_addAccount" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_addAccount"
+        android:name="org.androdevlinux.spectrum.ui.AccountUiFragment"
+        android:label="Add Account"
+        tools:layout="@layout/fragment_account_ui">
+
+        <argument
+            android:name="btnName"
+            app:argType="string" />
+        <argument
+            android:name="btnColor"
+            app:argType="string" />
+        <action
+            android:id="@+id/to_navigation_accounts"
+            app:destination="@id/navigation_accounts" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_address"
+        android:name="org.androdevlinux.spectrum.ui.AddressFragment"
+        android:label="Address"
+        tools:layout="@layout/fragment_payment_code" />
 </navigation>

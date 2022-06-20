@@ -17,6 +17,7 @@
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:cornerRadius="@dimen/button_stroke_radius"
         app:strokeColor="@color/black" />
 
@@ -31,25 +32,27 @@
         <ImageView
             android:id="@+id/qrCode"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:contentDescription="qr-code"
             android:layout_marginVertical="16sp"
-            android:layout_height="wrap_content"/>
+            android:contentDescription="qr-code" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/hashCodeView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
             android:textAlignment="center"
+            android:textColor="@color/black"
             app:strokeColor="@color/black" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_copy"
             android:gravity="center"
             android:padding="8dp"
-            android:drawableStart="@drawable/ic_copy"
             android:text="Copy"
             android:textAlignment="center"
             app:strokeColor="@color/black" />
